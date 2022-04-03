@@ -14,7 +14,7 @@ public class PostsTest {
 
     @Test
     @Description("Check all comments to all user with userName 'Delphine' contains correct ids (/posts?userId=id)")
-    public void searchEmailTest0() {
+    public void onlyUserPosts() {
         Post[] posts = Util.sendRequestAndGetResponse("/posts?userId=9").as((Type) Post[].class);
 
         Allure.step("Check the quantity of posts by 'Delphine' != 0", () ->
@@ -29,7 +29,7 @@ public class PostsTest {
 
     @Test
     @Description("Check all comments to all user with userName 'Delphine' contains correct ids (/users/id/posts)")
-    public void searchUserIdTest() {
+    public void onlyUserPosts2() {
         Post[] posts = Util.sendRequestAndGetResponse("/users/9/posts").as((Type) Post[].class);
 
         Allure.step("Check the quantity of posts by 'Delphine' != 0", () ->
